@@ -36,13 +36,14 @@ void PrintMatrix(int[,] matrix)
 void SumElements(int[,] matr, int rows)
 {
     double sum=0;
-    for (int i = 0; i < matr.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(1); i++)
     {
-        for (int j = 0; j < matr.GetLength(1);)
+        for (int j = 0; j < matr.GetLength(0); j++)
         {
-            sum+=matr[i, j];
+            sum+=matr[j, i];
         }
-        System.Console.Write(sum/rows + " ");
+        System.Console.Write(Math.Round(sum/rows,1) + "\t");
+        sum = 0;
     }
     
 }
